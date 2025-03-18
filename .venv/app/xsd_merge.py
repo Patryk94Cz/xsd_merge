@@ -91,8 +91,8 @@ class XSDMerger:
 
 def main():
     base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    input_dir = os.path.join(base_dir, 'xsd_in')
-    output_dir = os.path.join(base_dir, 'xsd_out')
+    input_dir = os.path.join(base_dir, 'xsd_merged_input')
+    output_dir = os.path.join(base_dir, 'xsd_merged_output')
 
     if not os.path.isdir(input_dir):
         print(f"Katalog wejściowy nie istnieje: {input_dir}")
