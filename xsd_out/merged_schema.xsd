@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+  <xs:element name="request" type="request"/>
+  <xs:complexType name="Pelnomocnictwo0006">
+		<xs:sequence>
+			<xs:element name="produkt" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="Pelnomocnictwo0007a">
+		<xs:sequence>
+			<xs:element name="Pelnomocnictwo0006" minOccurs="0" maxOccurs="1" type="Pelnomocnictwo0006"/>
+			<xs:element name="Pelnomocnictwo0011" minOccurs="0" maxOccurs="1" type="Pelnomocnictwo0011"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="Pelnomocnictwo0011">
+		<xs:sequence>
+			<xs:element name="numerKontaOsobistego" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="Pelnomocnictwo0003">
+		<xs:sequence>
+			<xs:element name="imieINazwisko" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="pesel" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="adres" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="Pelnomocnictwo0009">
+		<xs:sequence>
+			<xs:element name="produkt" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="numerKontaDoObciazen" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="numerUmowy" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="Pelnomocnictwo0010">
+		<xs:sequence>
+			<xs:element name="numerZalacznika" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="produkt" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="numerUmowy" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="dataZawarciaUmowy" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="document">
+		<xs:sequence>
+			<xs:element name="documentName" minOccurs="0" maxOccurs="1" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>dodawane na poziomie komunikacji docGen -&amp;gt; CCM. 
+Nie jest wypełniany podczas wywołania usługi docGen.
+</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nodeRef" minOccurs="0" maxOccurs="1" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>dodawane na poziomie komunikacji docGen -&amp;gt; CCM. 
+Nie jest wypełniany podczas wywołania usługi docGen.
+</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="processId" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="Pelnomocnictwo0007a" minOccurs="0" maxOccurs="1" type="Pelnomocnictwo0007a"/>
+			<xs:element name="Pelnomocnictwo0003" minOccurs="0" maxOccurs="1" type="Pelnomocnictwo0003"/>
+			<xs:element name="Pelnomocnictwo0009" minOccurs="0" maxOccurs="1" type="Pelnomocnictwo0009"/>
+			<xs:element name="Pelnomocnictwo0010" minOccurs="0" maxOccurs="1" type="Pelnomocnictwo0010"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="request">
+		<xs:sequence>
+			<xs:element name="documents" minOccurs="1" maxOccurs="unbounded" type="document"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="NaturalPersons">
+		<xs:sequence>
+			<xs:element name="naturalPerson" minOccurs="1" maxOccurs="unbounded" type="NaturalPerson"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="Tyt0004">
+		<xs:sequence>
+			<xs:element name="NumerKredytu" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0004">
+		<xs:sequence>
+			<xs:element name="DzienZawarciaUmowy" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0009">
+		<xs:sequence>
+			<xs:element name="RachunekLubKonto" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0013">
+		<xs:sequence>
+			<xs:element name="KwotaUdzielonegoKredytu" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="KwotaUdzielonegoKredytuSlownie" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0014">
+		<xs:sequence>
+			<xs:element name="CalkowitaKwotaKredytu" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="NumerKonta" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0015">
+		<xs:sequence>
+			<xs:element name="CalkowityKosztKredytu" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="ProwizjaZaUdzielenieKredytu" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="OdsetkiOdKredytu" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="KosztyUslugDodatkowych" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="SkladkaZTytuluUbezpieczenia" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="NazwaUbezpieczenia" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0016">
+		<xs:sequence>
+			<xs:element name="CalkowitaKwotaDoZaplaty" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0017">
+		<xs:sequence>
+			<xs:element name="NumerRachunkuBankowego" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="KwotaZTytuluSplaty" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="TytulSplaty" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="Institution">
+		<xs:sequence>
+			<xs:element name="districtCourtName" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="name" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="legalFormCode" minOccurs="1" maxOccurs="1" type="xs:integer"/>
+			<xs:element name="legalFormName" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="krs" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="nip" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="regon" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="otherIdentifier" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="shareCapital" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="paidCapital" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="subordinateType" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="idID" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="capitalCurrency" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="roleVisible" minOccurs="0" maxOccurs="1" type="xs:boolean"/>
+			<xs:element name="registrationAuthority" minOccurs="0" maxOccurs="1" type="RegistrationAuthority"/>
+			<xs:element name="address" minOccurs="0" maxOccurs="1" type="Address"/>
+			<xs:element name="subordinates" minOccurs="0" maxOccurs="1" type="Subordinates"/>
+			<xs:element name="naturalPerson" minOccurs="0" maxOccurs="1" type="NaturalPerson"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="Subordinates">
+		<xs:sequence>
+			<xs:element name="subordinate" minOccurs="1" maxOccurs="unbounded" type="Institution"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="getCommencementsData">
+		<xs:sequence>
+			<xs:element name="applicationSubjectId" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+			<xs:element name="predictedSignDate" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="isElectronicChannel" minOccurs="1" maxOccurs="1" type="xs:boolean"/>
+			<xs:element name="groupMembers" minOccurs="0" maxOccurs="1" type="GroupMembers"/>
+			<xs:element name="roles" minOccurs="0" maxOccurs="1" type="Roles"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="GroupMembers">
+		<xs:sequence>
+			<xs:element name="groupMember" minOccurs="1" maxOccurs="unbounded" type="GroupMember"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="GroupMember">
+		<xs:sequence>
+			<xs:element name="role" minOccurs="0" maxOccurs="1" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>rola członka grupy, taka jak Bank, albo Leasing</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="gmdID" minOccurs="1" maxOccurs="1" type="xs:integer"/>
+			<xs:element name="shareCapital" minOccurs="0" maxOccurs="1" type="xs:double"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="Roles">
+		<xs:sequence>
+			<xs:element name="role" minOccurs="1" maxOccurs="unbounded" type="Role"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="Role">
+		<xs:sequence>
+			<xs:element name="role" minOccurs="1" maxOccurs="1" type="xs:integer"/>
+			<xs:element name="roleName" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="naturalPersons" minOccurs="0" maxOccurs="1" type="NaturalPersons"/>
+			<xs:element name="institutions" minOccurs="0" maxOccurs="1" type="Institutions"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="Address">
+		<xs:sequence>
+			<xs:element name="city" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="postalCode" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="streetPrefix" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="street" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="premiseNumber" minOccurs="0" maxOccurs="1" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>numer posesji i ewentualnie lokalu, np:
+13
+13/7</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="country" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="Institutions">
+		<xs:sequence>
+			<xs:element name="institution" minOccurs="1" maxOccurs="unbounded" type="Institution"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="NaturalPerson">
+		<xs:sequence>
+			<xs:element name="nameAndSurname" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="pesel" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="birthdate" minOccurs="0" maxOccurs="1" type="xs:date"/>
+			<xs:element name="residency" minOccurs="1" maxOccurs="1" type="xs:boolean"/>
+			<xs:element name="legalFormName" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="legalFormCode" minOccurs="1" maxOccurs="1" type="xs:integer"/>
+			<xs:element name="npdID" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="roleVisible" minOccurs="0" maxOccurs="1" type="xs:boolean"/>
+			<xs:element name="identyficationDocumentType" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="identyficationDocumentNumber" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="sex" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="representatives" minOccurs="0" maxOccurs="1" type="Representatives"/>
+			<xs:element name="address" minOccurs="0" maxOccurs="1" type="Address"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="Representatives">
+		<xs:sequence>
+			<xs:element name="representationRole" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="representationType" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="representative" minOccurs="1" maxOccurs="unbounded" type="NaturalPerson"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="RegistrationAuthority">
+		<xs:sequence>
+			<xs:element name="name" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="address" minOccurs="0" maxOccurs="1" type="Address"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0018">
+		<xs:sequence>
+			<xs:element name="LiczbaRatKredytu" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0019">
+		<xs:sequence>
+			<xs:element name="RachunekBankowy" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0020">
+		<xs:sequence>
+			<xs:element name="OprocentowanieStale" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="OprocentowanieZmienne" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0034">
+		<xs:sequence>
+			<xs:element name="NumerRachunkuBankowego" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="CalkowitaKwotaKredytuPomniejszonaOPowyzszeWartosci" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="UmKreGot0007">
+		<xs:sequence>
+			<xs:element name="ProcentPodwyzszeniaProwizji" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="KontaLubRachunku" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="KoncieLubRachunku" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="NazwaUbezpieczenia" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="UmKreGot0012">
+		<xs:sequence>
+			<xs:element name="LiczbaGodzin" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0033">
+		<xs:sequence>
+			<xs:element name="CalkowitaKwotaKredytu" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="PrDoOdOdUm0027">
+		<xs:sequence>
+			<xs:element name="DziennaKwotaOdsetekWRokuZwyklym" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="DziennaKwotaOdsetekWRokuPrzestepnym" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0021">
+		<xs:sequence>
+			<xs:element name="NazwaRegulaminu" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0022">
+		<xs:sequence>
+			<xs:element name="RRSO" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0024">
+		<xs:sequence>
+			<xs:element name="RowneLubMalejace" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="OprocentowanieTypOpis" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0026">
+		<xs:sequence>
+			<xs:element name="DataObowiazywaniaUmowy" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0028">
+		<xs:sequence>
+			<xs:element name="PrzeznaczenieKredytu" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="OpriNO0010">
+		<xs:sequence>
+			<xs:element name="StopaProcentowa" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="SpKr0002">
+		<xs:sequence>
+			<xs:element name="WysokoscOdsetekMaksymalnych" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="SpKr0003">
+		<xs:sequence>
+			<xs:element name="NumerRachunku" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="RodzajZobowiazania" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="PrDoOdOdUm0025">
+		<xs:sequence>
+			<xs:element name="NumerZalacznika" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="NumerRachunku" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="RachunkuLubKonta" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="TenRachunekLubToKonto" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="UmKreGot0026">
+		<xs:sequence>
+			<xs:element name="KoncieLubRachunku" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="UmKreGot0003">
+		<xs:sequence>
+			<xs:element name="NumerRachunku" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="UmKreGot0033">
+		<xs:sequence>
+			<xs:element name="NumerRachunku" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="UmKreGot0014">
+		<xs:sequence>
+			<xs:element name="NazwaPolisy" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="UmKreGot0043">
+		<xs:sequence>
+			<xs:element name="nazwaDokumentuDolaczonego" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="UmKreGot0054a">
+		<xs:sequence>
+			<xs:element name="UmKreGot0043" minOccurs="1" maxOccurs="unbounded" type="UmKreGot0043"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="UmKreGot0055">
+		<xs:sequence>
+			<xs:element name="isODZ" minOccurs="0" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="UmowaZmienneSterujace">
+		<xs:sequence>
+			<xs:element name="StopaTyp" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="UbezpSpokojnyKredyt" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="ZobWew" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="ZobZew" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="CzyPelnomocnictwo" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="Wspolmalzonek" minOccurs="1" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="WarKr0017List">
+		<xs:sequence>
+			<xs:element name="WarKr0017" minOccurs="0" maxOccurs="unbounded" type="WarKr0017"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="SpKr0003List">
+		<xs:sequence>
+			<xs:element name="SpKr0003" minOccurs="0" maxOccurs="unbounded" type="SpKr0003"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
